@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="300"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.44">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="shadowLinearGradient">
+      <stop
+         style="stop-color:black;"
+         offset="0"
+         id="shadowCenter" />
+      <stop
+         style="stop-color:black;stop-opacity:0"
+         offset="1"
+         id="shadowEdge" />
+    </linearGradient>
+    <linearGradient
+       id="whiteLinearGradient">
+      <stop
+         style="stop-color:#ffffff"
+         offset="0"
+         id="whiteHighlight" />
+      <stop
+         style="stop-color:#dddddd"
+         offset="0.5"
+         id="whiteMidtone" />
+      <stop
+         style="stop-color:#999999"
+         offset="1"
+         id="whiteBase" />
+    </linearGradient>
+    <linearGradient
+       id="blackLinearGradient">
+      <stop
+         style="stop-color:#888888"
+         offset="0"
+         id="blackHighlight" />
+      <stop
+         style="stop-color:#5b5b5b"
+         offset="0.5"
+         id="blackMidtone" />
+      <stop
+         style="stop-color:#000000"
+         offset="1"
+         id="blackBase" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#shadowLinearGradient"
+       id="shadowGradient"
+       cx="2"
+       cy="2"
+       fx="0"
+       fy="0"
+       r="10"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#whiteLinearGradient"
+       id="whiteGradient"
+       cx="0"
+       cy="0"
+       fx="-5"
+       fy="-5"
+       r="10"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#blackLinearGradient"
+       id="blackGradient"
+       cx="0"
+       cy="0"
+       fx="-5"
+       fy="-5"
+       r="10"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="50"
+     guidetolerance="10"
+     objecttolerance="50"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="150"
+     inkscape:cy="150"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1024"
+     inkscape:window-height="721"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     showgrid="true"
+     gridspacingx="20px"
+     gridspacingy="20px"
+     gridempspacing="0"
+     inkscape:object-nodes="false"
+     inkscape:guide-bbox="false"
+     gridoriginy="10px"
+     gridoriginx="10px"
+     inkscape:object-points="false"
+     inkscape:object-bbox="false"
+     inkscape:object-paths="false"
+     inkscape:grid-bbox="false"
+     showguides="true"
+     inkscape:guide-points="false"
+     inkscape:grid-points="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(39.5,20.5)">
+    <g
+       id="everything">
+      <g
+         id="pieceStyles"
+         transform="translate(120,120)">
+        <g
+           id="whitePiece">
+          <path
+             sodipodi:type="arc"
+             style="fill:url(#shadowGradient);"
+             id="path5000"
+             sodipodi:cx="2"
+             sodipodi:cy="2"
+             sodipodi:rx="10"
+             sodipodi:ry="10"
+             height="40"
+             width="40"
+             d="M 12,2 A 10 10 0 1 1 -8,2 A 10 10 0 1 1 12,2 z" />
+          <path
+             sodipodi:type="arc"
+             style="fill:url(#whiteGradient);"
+             id="path5001"
+             sodipodi:cx="0"
+             sodipodi:cy="0"
+             sodipodi:rx="10"
+             sodipodi:ry="10"
+             height="40"
+             width="40"
+             d="M 10,0 A 10 10 0 1 1 -10,0 A 10 10 0 1 1 10,0 z" />
+        </g>
+        <g
+           id="blackPiece">
+          <path
+             sodipodi:type="arc"
+             style="fill:url(#shadowGradient);"
+             id="path6000"
+             sodipodi:cx="2"
+             sodipodi:cy="2"
+             sodipodi:rx="10"
+             sodipodi:ry="10"
+             height="40"
+             width="40"
+             d="M 12,2 A 10 10 0 1 1 -8,2 A 10 10 0 1 1 12,2 z" />
+          <path
+             sodipodi:type="arc"
+             style="fill:url(#blackGradient);"
+             id="path6001"
+             sodipodi:cx="0"
+             sodipodi:cy="0"
+             sodipodi:rx="10"
+             sodipodi:ry="10"
+             height="40"
+             width="40"
+             d="M 10,0 A 10 10 0 1 1 -10,0 A 10 10 0 1 1 10,0 z" />
+        </g>
+      </g>
+      <g
+         id="boardAndNotation">
+        <g
+           id="board">
+          <rect
+             y="0"
+             x="0"
+             height="240"
+             width="240"
+             id="boardBackground"
+             style="fill:#fff0c0" />
+          <path
+             id="movementLines"
+             d="M 0,0 l 240,0 0,240 -240,0 0,-240 M 40,40 l 160,0 0,160 -160,0 0,-160 M 80,80 l 80,0 0,80 -80,0 0,-80 M 120,0 l 0,80 M 240,120 l -80,0 M 120,240 l 0,-80 M 0,120 l 80,0 z "
+             style="fill:none;stroke:black;" />
+          <g
+             id="intersections">
+            <path
+               sodipodi:type="arc"
+               style="fill:black;stroke:none;"
+               id="path1000"
+               sodipodi:cx="0"
+               sodipodi:cy="0"
+               sodipodi:rx="2"
+               sodipodi:ry="2"
+               d="M 0,0 m -2,0 a 2 2 0 1 1 4,0 a 2 2 0 1 1 -4,0 z" />
+            <use
+               xlink:href="#path1000"
+               id="use1000"
+               transform="translate(120,0)" />
+            <use
+               xlink:href="#path1000"
+               id="use1001"
+               transform="translate(240,0)" />
+            <use
+               xlink:href="#path1000"
+               id="use1002"
+               transform="translate(40,40)" />
+            <use
+               xlink:href="#path1000"
+               id="use1003"
+               transform="translate(120,40)" />
+            <use
+               xlink:href="#path1000"
+               id="use1004"
+               transform="translate(200,40)" />
+            <use
+               xlink:href="#path1000"
+               id="use1005"
+               transform="translate(80,80)" />
+            <use
+               xlink:href="#path1000"
+               id="use1006"
+               transform="translate(120,80)" />
+            <use
+               xlink:href="#path1000"
+               id="use1007"
+               transform="translate(160,80)" />
+            <use
+               xlink:href="#path1000"
+               id="use1008"
+               transform="translate(0,120)" />
+            <use
+               xlink:href="#path1000"
+               id="use1009"
+               transform="translate(40,120)" />
+            <use
+               xlink:href="#path1000"
+               id="use1010"
+               transform="translate(80,120)" />
+            <use
+               xlink:href="#path1000"
+               id="use1011"
+               transform="translate(160,120)" />
+            <use
+               xlink:href="#path1000"
+               id="use1012"
+               transform="translate(200,120)" />
+            <use
+               xlink:href="#path1000"
+               id="use1013"
+               transform="translate(240,120)" />
+            <use
+               xlink:href="#path1000"
+               id="use1014"
+               transform="translate(80,160)" />
+            <use
+               xlink:href="#path1000"
+               id="use1015"
+               transform="translate(120,160)" />
+            <use
+               xlink:href="#path1000"
+               id="use1016"
+               transform="translate(160,160)" />
+            <use
+               xlink:href="#path1000"
+               id="use1017"
+               transform="translate(40,200)" />
+            <use
+               xlink:href="#path1000"
+               id="use1018"
+               transform="translate(120,200)" />
+            <use
+               xlink:href="#path1000"
+               id="use1019"
+               transform="translate(200,200)" />
+            <use
+               xlink:href="#path1000"
+               id="use1020"
+               transform="translate(0,240)" />
+            <use
+               xlink:href="#path1000"
+               id="use1021"
+               transform="translate(120,240)" />
+            <use
+               xlink:href="#path1000"
+               id="use1022"
+               transform="translate(240,240)" />
+          </g>
+        </g>
+        <g
+           id="notation">
+          <g
+             id="g2000"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle"
+             transform="translate(0,263.252)">
+            <text
+               xml:space="preserve"
+               id="text1000"
+               x="0"
+               y="0">a</text>
+            <text
+               xml:space="preserve"
+               id="text1001"
+               x="40"
+               y="0">b</text>
+            <text
+               xml:space="preserve"
+               id="text1002"
+               x="80"
+               y="0">c</text>
+            <text
+               xml:space="preserve"
+               id="text1003"
+               x="120"
+               y="0">d</text>
+            <text
+               xml:space="preserve"
+               id="text1004"
+               x="160"
+               y="0">e</text>
+            <text
+               xml:space="preserve"
+               id="text1005"
+               x="200"
+               y="0">f</text>
+            <text
+               xml:space="preserve"
+               id="text1006"
+               x="240"
+               y="0">g</text>
+          </g>
+          <g
+             id="g3000"
+             style="font-size:12px;font-family:sans-serif;text-anchor:middle"
+             transform="translate(-20,3.252)">
+            <text
+               xml:space="preserve"
+               id="text3000"
+               x="0"
+               y="0">7</text>
+            <text
+               xml:space="preserve"
+               id="text3001"
+               x="0"
+               y="40">6</text>
+            <text
+               xml:space="preserve"
+               id="text3002"
+               x="0"
+               y="80">5</text>
+            <text
+               xml:space="preserve"
+               id="text3003"
+               x="0"
+               y="120">4</text>
+            <text
+               xml:space="preserve"
+               id="text3004"
+               x="0"
+               y="160">3</text>
+            <text
+               xml:space="preserve"
+               id="text3005"
+               x="0"
+               y="200">2</text>
+            <text
+               xml:space="preserve"
+               id="text3006"
+               x="0"
+               y="240">1</text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="pieces">
+        <use
+           transform="translate(160,80)"
+           id="whitePiece1"
+           xlink:href="#whitePiece" />
+        <use
+           transform="translate(160,120)"
+           id="whitePiece2"
+           xlink:href="#whitePiece" />
+        <use
+           transform="translate(160,160)"
+           id="whitePiece3"
+           xlink:href="#whitePiece" />
+        <use
+           transform="translate(120,200)"
+           id="whitePiece4"
+           xlink:href="#whitePiece" />
+        <use
+           transform="translate(120,240)"
+           id="whitePiece5"
+           xlink:href="#whitePiece" />
+        <use
+           transform="translate(200,40)"
+           id="blackPiece1"
+           xlink:href="#blackPiece" />
+        <use
+           transform="translate(40,120)"
+           id="blackPiece2"
+           xlink:href="#blackPiece" />
+        <use
+           transform="translate(80,120)"
+           id="blackPiece3"
+           xlink:href="#blackPiece" />
+        <use
+           transform="translate(200,120)"
+           id="blackPiece4"
+           xlink:href="#blackPiece" />
+        <use
+           transform="translate(40,200)"
+           id="blackPiece5"
+           xlink:href="#blackPiece" />
+        <use
+           transform="translate(200,200)"
+           id="blackPiece6"
+           xlink:href="#blackPiece" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import type { FC } from "react"
+import { Wrap } from "./Wrap"
+import { Chips } from "./components/Chips"
+import { Dots } from "./components/Dots"
+import { Numbers } from "./components/Numbers"
+import { Letters } from "./components/Letters"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const App: FC = () => (
+    <Wrap>
+        <Numbers />
+        <Letters />
+        <div className="square-out">
+            <div className="square-mid" />
+            <div className="square-inner" />
+            <div className="line-left" />
+            <div className="line-right" />
+            <div className="line-top" />
+            <div className="line-bottom" />
+            <Dots />
+            <Chips />
+        </div>
+    </Wrap>
+)

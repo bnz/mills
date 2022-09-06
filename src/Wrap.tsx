@@ -4,6 +4,7 @@ import { debounce } from "./helpers/debounce"
 import { useRecoilValue } from "recoil"
 import { player as playerAtom } from "./store/player"
 import { cx } from "./helpers/cx"
+import { DebugButton } from "./Debug"
 
 const debounce2 = debounce((fn: Dispatch<SetStateAction<number>>) => {
     fn(window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth)
@@ -22,6 +23,16 @@ export const Wrap: FC<PropsWithChildren> = ({ children }) => {
 
     return (
         <>
+            <DebugButton />
+            <button
+                className="absolute top-1 left-1/3 z-20 -translate-x-1/2"
+                onClick={() => {
+                    localStorage.clear()
+                    window.location = window.location
+                }}
+            >
+                с начала
+            </button>
             <div
                 className={cx("side-w", player === "w" && "visible opacity-100")}
                 style={{ ["--S" as string]: S }}

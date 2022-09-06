@@ -1,92 +1,59 @@
 import { atom, selector } from "recoil"
 import { localStorageEffect } from "./localStorageEffect"
-import { player } from "./player"
+import { player as playerAtom } from "./player"
+import { checkLines } from "./useCheckLines"
 
-// {"b1":{"location":"d5","selected":false},"b2":{"location":"g7","selected":false},"b3":{"location":"d7","selected":false},"b4":{"location":"f4","selected":false},"b5":{"location":"e3","selected":false},"b6":{"location":"g1","selected":false},"b7":{"location":"d2","selected":false},"b8":{"location":"c3","selected":false},"b9":{"location":"a1","selected":false},"w1":{"location":"e5","selected":false},"w2":{"location":"d6","selected":false},"w3":{"location":"f6","selected":false},"w4":{"location":"g4","selected":false},"w5":{"location":"e4","selected":false},"w6":{"location":"f2","selected":false},"w7":{"location":"d1","selected":false},"w8":{"location":"d3","selected":false},"w9":{"location":"b2","selected":false}}
+export const selectedChip = atom<string>({
+    key: "selectedChip",
+    default: "",
+    effects: [
+        localStorageEffect("selectedChip"),
+    ],
+})
 
-interface Chip {
-    location: string
-    selected: boolean
-}
+export const currentPlayerChips = selector<string[]>({
+    key: "currentPlayerChips",
+    get: ({ get }) => {
+        const _chips = get(chips)
+        const current: string[] = []
+        const player = get(playerAtom)
+        Object.keys(_chips).forEach((key) => {
+            if (key[0] === player) {
+                current.push(_chips[key])
+            }
+        })
+        return current
+    },
+})
 
-export const chips = atom<Record<string, Chip>>({
+export const isGameFirstPhase = selector<boolean>({
+    key: "isFirstGamePhase",
+    get: ({ get }) => Object.values(get(chips)).findIndex((location) => location === "") !== -1,
+})
+
+// {"b1":"d7","b2":"d5","b3":"a7","b4":"a1","b5":"d2","b6":"c3","b7":"b4","b8":"e4","b9":"f4","w1":"g7","w2":"e5","w3":"d6","w4":"a4","w5":"d1","w6":"d3","w7":"c4","w8":"b6","w9":"e3"}
+
+export const chips = atom<Record<string, string>>({
     key: "chips",
     default: {
-        b1: {
-            location: "",
-            selected: false,
-        },
-        b2: {
-            location: "",
-            selected: false,
-        },
-        b3: {
-            location: "",
-            selected: false,
-        },
-        b4: {
-            location: "",
-            selected: false,
-        },
-        b5: {
-            location: "",
-            selected: false,
-        },
-        b6: {
-            location: "",
-            selected: false,
-        },
-        b7: {
-            location: "",
-            selected: false,
-        },
-        b8: {
-            location: "",
-            selected: false,
-        },
-        b9: {
-            location: "",
-            selected: false,
-        },
-
-        // - - - - - - - - - - -
-
-        w1: {
-            location: "",
-            selected: false,
-        },
-        w2: {
-            location: "",
-            selected: false,
-        },
-        w3: {
-            location: "",
-            selected: false,
-        },
-        w4: {
-            location: "",
-            selected: false,
-        },
-        w5: {
-            location: "",
-            selected: false,
-        },
-        w6: {
-            location: "",
-            selected: false,
-        },
-        w7: {
-            location: "",
-            selected: false,
-        },
-        w8: {
-            location: "",
-            selected: false,
-        },
-        w9: {
-            location: "",
-            selected: false,
-        },
+        b1: "",
+        b2: "",
+        b3: "",
+        b4: "",
+        b5: "",
+        b6: "",
+        b7: "",
+        b8: "",
+        b9: "",
+        w1: "",
+        w2: "",
+        w3: "",
+        w4: "",
+        w5: "",
+        w6: "",
+        w7: "",
+        w8: "",
+        w9: "",
     },
     effects: [
         localStorageEffect("chips"),
@@ -97,19 +64,50 @@ export const getNextChip = selector({
     key: "getNextChip",
     get({ get }) {
         const _chips = get(chips)
-        const _player = get(player)
+        const player = get(playerAtom)
 
         return Object.keys(_chips).find((key) => (
-            key[0] === _player && _chips[key].location === ""
+            key[0] === player && _chips[key] === ""
         ))
     },
     set({ set }, { chipName, location }: any) {
         set(chips, (prevValue) => ({
             ...prevValue,
-            [chipName]: {
-                ...prevValue[chipName],
-                location,
-            },
+            [chipName]: location,
         }))
     },
 })
+
+export const matchedLines = atom<Set<string>>({
+    key: "matchedLine",
+    default: new Set(),
+    effects: [
+        localStorageEffect("matched-lines"),
+    ],
+})
+
+export const cachedLines = atom<Set<string>>({
+    key: "cachedLines",
+    default: new Set(),
+    effects: [
+        localStorageEffect("cached-lines"),
+    ],
+})
+
+export const clickOnDot = selector<string>({
+    key: "clickOnDot",
+    get: () => "",
+    set: ({ get, set }) => {
+        const matched = checkLines(get(currentPlayerChips))
+        if (matched.size > 0) {
+            set(matchedLines, matched)
+            set(cachedLines, matched)
+        } else {
+            set(playerAtom, (was) => was === "w" ? "b" : "w")
+        }
+    },
+})
+
+export const getLocationPossibleMove = () => {
+
+}

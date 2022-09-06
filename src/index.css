@@ -17,6 +17,7 @@ body,
 
 #root {
     position: relative;
+    overflow: hidden;
 }
 
 :root {
@@ -229,7 +230,7 @@ body,
 @layer components {
     .wrapper {
         @apply relative overflow-hidden select-none;
-        @apply max-h-full aspect-square ml-auto mr-auto;
+        @apply max-h-full aspect-square m-auto;
     }
 
     .shadow-1 {
@@ -330,6 +331,8 @@ body,
 
         @apply z-20 absolute rounded-full -translate-y-1/2 -translate-x-1/2 drop-shadow-lg;
         @apply transition-all;
+        @apply flex items-center justify-center;
+
         width: calc(var(--S) / var(--size));
         height: calc(var(--S) / var(--size));
         box-shadow: inset calc(var(--S) / -35) calc(var(--S) / -70) calc(var(--S) / 25) var(--shadow-color);
@@ -357,14 +360,24 @@ body,
         @apply -top-1/2 left-[150%];
     }
 
+    .delete-cross {
+        @apply cursor-pointer;
+        @apply before:w-2 before:h-2/3 before:bg-red-600 before:rounded-full;
+        @apply before:absolute before:top-1/2 before:left-1/2 before:rotate-45;
+        @apply before:-translate-x-1/2 before:-translate-y-1/2;
+        @apply after:w-2 after:h-2/3 after:bg-red-600 after:rounded-full;
+        @apply after:absolute after:top-1/2 after:left-1/2 after:rotate-135;
+        @apply after:-translate-x-1/2 after:-translate-y-1/2;
+    }
+
     .side {
         @apply absolute rounded-full drop-shadow-lg;
         @apply invisible opacity-0 transition-all;
 
         --v: 0.2;
 
-        width: calc(var(--S) *var(--v));
-        height: calc(var(--S) *var(--v));
+        width: calc(var(--S) * var(--v));
+        height: calc(var(--S) * var(--v));
         top: calc(var(--S) * var(--v) / -2);
     }
 
@@ -376,5 +389,27 @@ body,
     .side-b {
         @apply side bg-gray-900;
         right: calc(var(--S) * var(--v) / -2);
+    }
+
+    .message {
+        @apply absolute top-1/2 left-1/2;
+        @apply -translate-y-1/2 -translate-x-1/2;
+        @apply flex flex-col items-center justify-center text-center;
+
+        width: calc(var(--S) * var(--1-6));
+        height: calc(var(--S) * var(--1-6));
+    }
+
+    .msg {
+        @apply p-3 rounded;
+        font-size: calc(var(--S) * 0.02);
+    }
+
+    .message .white {
+        @apply msg bg-gray-300 text-gray-800 mb-2;
+    }
+
+    .message .black {
+        @apply msg bg-gray-900 text-gray-300 mb-2;
     }
 }

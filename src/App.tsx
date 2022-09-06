@@ -4,9 +4,11 @@ import { Chips } from "./components/Chips"
 import { Dots } from "./components/Dots"
 import { Numbers } from "./components/Numbers"
 import { Letters } from "./components/Letters"
+import { Message } from "./components/Message"
 
 export const App: FC = () => (
     <Wrap>
+        <Message />
         <Numbers />
         <Letters />
         <div className="square-out">

@@ -1,6 +1,7 @@
 import type { FC } from "react"
 import { Dot } from "./Dot"
-import { Letters, verticalLines } from "../store/useCheckLines"
+import type { Letters } from "../store/static"
+import { verticalLines } from "../store/static"
 
 export const Dots: FC = () => (
     <>

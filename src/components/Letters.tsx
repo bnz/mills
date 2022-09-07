@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import { cx } from "../helpers/cx"
-import { verticalLines } from "../store/useCheckLines"
+import { verticalLines } from "../store/static"
 
 export const Letters: FC = () => (
     <>

@@ -1,8 +1,15 @@
 import type { FC } from "react"
 import { cx } from "../helpers/cx"
-import { chips, isGameFirstPhase, matchedLines, selectedChip } from "../store/chips"
+import {
+    availableDots,
+    chips,
+    isGameFirstPhase,
+    matchedLines,
+    selectedChip,
+    player as playerAtom,
+} from "../store/atoms"
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
-import { player as playerAtom } from "../store/player"
+import { useGetAvailableDots } from "../helpers/game/useGetAvailableDots"
 
 interface ChipProps {
     name: string
@@ -15,7 +22,11 @@ export const Chip: FC<ChipProps> = ({ name, location }) => {
     const isFirstPhase = useRecoilValue(isGameFirstPhase)
     const [matched, setMatched] = useRecoilState(matchedLines)
     const setChips = useSetRecoilState(chips)
-    const doDeleteMe = matched.size && name[0] !== player
+    const setAvailable = useSetRecoilState(availableDots)
+
+    const getAvailableDots = useGetAvailableDots(location)
+
+    const doDeleteMe = matched.size > 0 && name[0] !== player
 
     const onClick = () => {
         if (doDeleteMe) {
@@ -29,9 +40,21 @@ export const Chip: FC<ChipProps> = ({ name, location }) => {
             return
         }
 
-        if (!isFirstPhase) {
-            if (name[0] === player) {
-                setSelected((currVal) => currVal === name ? "" : name)
+        const neighbours = getAvailableDots()
+
+        if (
+            !isFirstPhase &&
+            neighbours.size > 0
+            && name[0] === player
+            && matched.size <= 0
+        ) {
+            if (selected === name) {
+                setSelected("")
+                setAvailable(new Set())
+            }
+            if (selected === "" || (selected !== name && selected !== "")) {
+                setSelected(name)
+                setAvailable(neighbours)
             }
         }
     }

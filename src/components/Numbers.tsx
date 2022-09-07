@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import { cx } from "../helpers/cx"
-import { horizontalLines } from "../store/useCheckLines"
+import { horizontalLines } from "../store/static"
 
 export const Numbers: FC = () => (
     <>

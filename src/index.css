@@ -307,6 +307,10 @@ body,
         @apply dark:before:active:bg-gray-300 before:active:bg-gray-400;
     }
 
+    .dot.animate {
+        @apply animate-pulse bg-green-500/[.1] shadow hover:bg-green-500/[.5] hover:animate-none;
+    }
+
     .label {
         @apply absolute rounded-full sizes;
         @apply flex justify-center items-center;
@@ -339,8 +343,13 @@ body,
         background-image: linear-gradient(-45deg, var(--main-background-color) 0%, transparent 100%);
     }
 
+    [class="chip-white"],
+    [class="chip-black"] {
+        @apply invisible;
+    }
+
     .chip.selected {
-        @apply border-4 border-red-700;
+        @apply border-4 border-green-800;
         --shadow-color: rgba(0, 0, 0, .5);
         --size: 8;
     }
@@ -352,12 +361,12 @@ body,
 
     .chip-white {
         @apply chip bg-gray-300;
-        @apply -top-1/2 -left-1/2;
+        @apply top-1/2 left-1/2;
     }
 
     .chip-black {
         @apply chip bg-gray-900 dark:bg-gray-700;
-        @apply -top-1/2 left-[150%];
+        @apply top-1/2 left-1/2;
     }
 
     .delete-cross {

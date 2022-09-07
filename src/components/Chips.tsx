@@ -1,6 +1,6 @@
 import type { FC } from "react"
 import { useRecoilValue } from "recoil"
-import { chips as chipsAtom } from "../store/chips"
+import { chips as chipsAtom } from "../store/atoms"
 import { Chip } from "./Chip"
 
 export const Chips: FC = () => {

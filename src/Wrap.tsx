@@ -2,11 +2,11 @@ import type { FC, PropsWithChildren, Dispatch, SetStateAction } from "react"
 import { useEffect, useState } from "react"
 import { debounce } from "./helpers/debounce"
 import { useRecoilValue } from "recoil"
-import { player as playerAtom } from "./store/player"
+import { player as playerAtom } from "./store/atoms"
 import { cx } from "./helpers/cx"
 import { DebugButton } from "./Debug"
 
-const debounce2 = debounce((fn: Dispatch<SetStateAction<number>>) => {
+const resize = debounce((fn: Dispatch<SetStateAction<number>>) => {
     fn(window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth)
 }, 400)
 
@@ -18,7 +18,7 @@ export const Wrap: FC<PropsWithChildren> = ({ children }) => {
     const player = useRecoilValue(playerAtom)
 
     useEffect(() => {
-        window.addEventListener("resize", () => debounce2(setW), false)
+        window.addEventListener("resize", () => resize(setW), false)
     }, [])
 
     return (
@@ -33,6 +33,7 @@ export const Wrap: FC<PropsWithChildren> = ({ children }) => {
             >
                 с начала
             </button>
+            {/*
             <div
                 className={cx("side-w", player === "w" && "visible opacity-100")}
                 style={{ ["--S" as string]: S }}
@@ -41,6 +42,7 @@ export const Wrap: FC<PropsWithChildren> = ({ children }) => {
                 className={cx("side-b", player === "b" && "visible opacity-100")}
                 style={{ ["--S" as string]: S }}
             />
+            */}
             <div
                 className={cx("wrapper", player)}
                 style={{

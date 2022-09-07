@@ -1,9 +1,14 @@
+const setTypeKeys = new Set([
+    "matched-lines",
+    "available-dots",
+])
+
 export const localStorageEffect = (key: string) => ({ setSelf, onSet }: { setSelf: any, onSet: any }) => {
     const savedValue = localStorage.getItem(key)
 
     if (savedValue != null) {
         let obj = JSON.parse(savedValue)
-        if (key === "matched-lines" || key === "cached-lines") {
+        if (setTypeKeys.has(key)) {
             obj = new Set(obj)
         }
         setSelf(obj)

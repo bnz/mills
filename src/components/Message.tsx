@@ -31,7 +31,7 @@ export const Message: FC = () => {
                     {i18n("Ход черных")}
                 </div>
             )}
-            <i>{subMessage}</i>
+            <i className="note">{subMessage}</i>
         </div>
     )
 }

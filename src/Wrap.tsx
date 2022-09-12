@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil"
 import { player as playerAtom } from "./store/atoms"
 import { cx } from "./helpers/cx"
 import { DebugButton } from "./Debug"
+import { i18n } from "./i18n/i18n"
 
 const resize = debounce((fn: Dispatch<SetStateAction<number>>) => {
     fn(window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth)
@@ -31,7 +32,7 @@ export const Wrap: FC<PropsWithChildren> = ({ children }) => {
                     window.location = window.location
                 }}
             >
-                с начала
+                {i18n("сначала")}
             </button>
             {/*
             <div

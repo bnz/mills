@@ -1,6 +1,7 @@
 import { atom, selector } from "recoil"
 import { localStorageEffect } from "./effects/localStorageEffect"
 import { documentTitleEffect } from "./effects/documentTitleEffect"
+import { Letters, Numbers } from "./static"
 
 export const player = atom<"w" | "b">({
     key: "player",
@@ -97,4 +98,9 @@ export const availableDots = atom<Set<string>>({
     effects: [
         localStorageEffect("available-dots"),
     ],
+})
+
+export const hoveredDot = atom<[Letters | null, Numbers | null]>({
+    key: "hovered-dot",
+    default: [null, null],
 })

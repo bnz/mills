@@ -76,7 +76,7 @@ export const Chip: FC<ChipProps> = ({ name, location }) => {
             )}
             onClick={onClick}
         >
-            {name}
+            {/*{name}*/}
         </div>
     )
 }

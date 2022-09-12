@@ -8,15 +8,17 @@ import {
     isGameFirstPhase,
     matchedLines,
     selectedChip,
-    player as playerAtom,
+    player as playerAtom, hoveredDot,
 } from "../store/atoms"
 import { checkLines } from "../helpers/game/checkLines"
+import { Letters, Numbers } from "../store/static"
 
 export const Dot: FC<{ name: string }> = ({ name: location }) => {
     const isFirstPhase = useRecoilValue(isGameFirstPhase)
     const current = useRecoilValue(currentPlayerChips)
 
     const setPlayer = useSetRecoilState(playerAtom)
+    const hovered = useSetRecoilState(hoveredDot)
 
     const [chipName, setChipName] = useRecoilState(getNextChip)
     const [matched, setMatched] = useRecoilState(matchedLines)
@@ -25,9 +27,13 @@ export const Dot: FC<{ name: string }> = ({ name: location }) => {
 
     const isDotAvailable = available.has(location) && selected !== ""
 
+    const [ltr, nbr]: [Letters, Numbers] = location as unknown as [Letters, Numbers]
+
     return (
         <div
             className={cx("dot", location, isDotAvailable && "animate")}
+            onMouseEnter={() => hovered([ltr, nbr])}
+            onMouseLeave={() => hovered([null, null])}
             onClick={() => {
                 if (isFirstPhase) {
                     if (matched.size > 0) {

@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil"
 import { player as playerAtom } from "./store/atoms"
 import { cx } from "./helpers/cx"
 import { DebugButton } from "./Debug"
-import { i18n } from "./i18n/i18n"
+import { TmpRestartButton } from "./TmpRestartButton"
 
 const resize = debounce((fn: Dispatch<SetStateAction<number>>) => {
     fn(window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth)
@@ -25,15 +25,7 @@ export const Wrap: FC<PropsWithChildren> = ({ children }) => {
     return (
         <>
             <DebugButton />
-            <button
-                className="absolute top-1 left-1/3 z-20 -translate-x-1/2"
-                onClick={() => {
-                    localStorage.clear()
-                    window.location = window.location
-                }}
-            >
-                {i18n("сначала")}
-            </button>
+            <TmpRestartButton />
             {/*
             <div
                 className={cx("side-w", player === "w" && "visible opacity-100")}

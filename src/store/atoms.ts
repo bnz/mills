@@ -20,14 +20,14 @@ export const selectedChip = atom<string>({
     ],
 })
 
-export const currentPlayerChips = selector<string[]>({
+export const currentPlayerChipsLocations = selector<string[]>({
     key: "current-player-chips",
     get({ get }) {
         const _chips = get(chips)
         const _player = get(player)
         const current: string[] = []
         Object.keys(_chips).forEach((key) => {
-            if (key[0] === _player) {
+            if (key[0] === _player && _chips[key] !== "") {
                 current.push(_chips[key])
             }
         })
@@ -37,9 +37,7 @@ export const currentPlayerChips = selector<string[]>({
 
 export const isGameFirstPhase = selector<boolean>({
     key: "is-first-game-phase",
-    get({ get }) {
-        return Object.values(get(chips)).findIndex((location) => location === "") !== -1
-    },
+    get: ({ get }) => Object.values(get(chips)).findIndex((location) => location === "") !== -1,
 })
 
 export const chips = atom<Record<string, string>>({
@@ -103,4 +101,9 @@ export const availableDots = atom<Set<string>>({
 export const hoveredDot = atom<[Letters | null, Numbers | null]>({
     key: "hovered-dot",
     default: [null, null],
+})
+
+export const isDotAvailable = selector<boolean>({
+    key: "isDotAvailable",
+    get: ({ get }) => get(selectedChip) !== "",
 })

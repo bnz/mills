@@ -17,7 +17,14 @@ body,
 
 #root {
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
+}
+
+@media (orientation: portrait) {
+    #root {
+        display: flex;
+        width: 100%;
+    }
 }
 
 :root {
@@ -231,7 +238,7 @@ body,
 @layer components {
     .wrapper {
         @apply relative overflow-hidden select-none;
-        @apply max-h-full aspect-square m-auto;
+        @apply max-h-full aspect-square m-auto portrait:flex-1;
     }
 
     .shadow-1 {
